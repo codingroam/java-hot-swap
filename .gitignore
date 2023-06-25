@@ -1,17 +1,58 @@
+HELP.md
 target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-# https://github.com/takari/maven-wrapper#usage-without-binary-jar
-.mvn/wrapper/maven-wrapper.jar
+**.mvn/wrapper/maven-wrapper.jar
+**/src/main/**/target/
+**/src/test/**/target/
+**/mvnw/**
 
-# Eclipse m2e generated files
-# Eclipse Core
-.project
-# JDT-specific (Eclipse Java Development Tools)
+
+### STS ###
+.apt_generated
 .classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+/hot-swap-agent/mvnw
+/hot-swap-common/mvnw
+/mvnw.cmd
+/hot-swap-server/mvnw.cmd
+/hot-swap-monitor/mvnw.cmd
+/hot-swap-core/mvnw.cmd
+/hot-swap-common/mvnw.cmd
+/hot-swap-agent/mvnw.cmd
+/mvnw
+/hot-swap-server/mvnw
+/hot-swap-monitor/mvnw
+/hot-swap-core/mvnw
+/hot-swap-agent/.mvn/wrapper/maven-wrapper.jar
+/hot-swap-common/.mvn/wrapper/maven-wrapper.jar
+/hot-swap-core/.mvn/wrapper/maven-wrapper.jar
+/hot-swap-monitor/.mvn/wrapper/maven-wrapper.jar
+/hot-swap-server/.mvn/wrapper/maven-wrapper.jar
+/.mvn/wrapper/maven-wrapper.properties
+/hot-swap-agent/.mvn/wrapper/maven-wrapper.properties
+/hot-swap-common/.mvn/wrapper/maven-wrapper.properties
+/hot-swap-core/.mvn/wrapper/maven-wrapper.properties
+/hot-swap-monitor/.mvn/wrapper/maven-wrapper.properties
+/hot-swap-server/.mvn/wrapper/maven-wrapper.properties

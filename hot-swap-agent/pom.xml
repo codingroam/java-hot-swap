@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.acme</groupId>
+        <artifactId>java-hot-swap</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <groupId>com.acme</groupId>
+    <artifactId>hotswap-agent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>hot-swap-agent</name>
+
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>8</java.version>
+    </properties>
+    <dependencies>
+
+        <dependency>
+            <groupId>com.acme</groupId>
+            <artifactId>hotswap-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>hot-swap-agent</finalName>
+        <plugins>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.5.5</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+
+
+                    <archive>
+                    <!-- 设置manifest配置文件-->
+                    <manifestEntries>
+                        <!--Premain-Class: 代表 Agent 静态加载时会调用的类全路径名。-->
+                        <Premain-Class>com.acme.agent.HotSwapAgentApplication</Premain-Class>
+                        <!--Agent-Class: 代表 Agent 动态加载时会调用的类全路径名。-->
+                        <Agent-Class>com.acme.agent.HotSwapAgentApplication</Agent-Class>
+                        <!--Can-Redefine-Classes: 是否可进行类定义。-->
+                        <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                        <!--Can-Retransform-Classes: 是否可进行类转换。-->
+                        <Can-Retransform-Classes>true</Can-Retransform-Classes>
+                    </manifestEntries>
+                    </archive>
+
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id> <!-- this is used for inheritance merges -->
+                        <phase>package</phase> <!-- bind to the packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
