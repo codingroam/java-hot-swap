@@ -47,6 +47,7 @@ java  %BOOT_CLASSPATH% -jar hot-swap-server.jar
 
 :userinput
 set /p var=请输入需要启动的服务(monitor or server)
+REM if else if要在右括号")"后跟 “^”
 if %var%==monitor (goto monitor)^
 else if %var%==server (goto server)^
 else (
