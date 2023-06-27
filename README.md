@@ -48,17 +48,19 @@ hotSwapStyle = auto
 
 
 ###启动命令
+<b>项目文件夹boot-jar下有启动jar包和脚本及配置文件</b>
 ```
-### 启动 monitor和server（脚本启动，目前只编写了shell脚本，支持linux和mac）
-项目文件夹boot-jar下有启动jar包和脚本及配置文件
+linux和mac下使用boot.sh启动,方式如下
+启动 monitor和server
 
-```bash
 # 启动monitor
 bash boot.sh monitor 
 
 #启动server
 # -Dserver.port=6000 指定端口号，默认 8091
 bash boot.sh server -Dserver.port=6000
+
+windows下直接双击start.bat启动，根据提示启动monitor和server服务
 ```
 
 monitor 指令
@@ -75,15 +77,10 @@ monitor 指令
 
 环境依赖
 
-- jdk 1.8+
+- jdk 1.8
 - maven
 
-```bash
-# mac or linux
-make package
-```
 
-```bash
 
 
 
